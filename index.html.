@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Nazwaa ❤️</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle, #40102f, #100514 75%);
+  font-family: Arial, sans-serif;
+  color: white;
+}
+.heart {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: #ff1681;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite;
+  box-shadow: 0 0 25px #ff1681, 0 0 65px #ff1681;
+  margin: 40px 0;
+}
+.heart::before, .heart::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #ff1681;
+}
+.heart::before { top: -75px; left: 0; }
+.heart::after { top: 0; left: 75px; }
+.name {
+  position: absolute;
+  z-index: 2;
+  top: 36px;
+  left: -15px;
+  width: 180px;
+  transform: rotate(45deg);
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 10px white;
+}
+h2 {
+  margin-top: 65px;
+  color: #ff9acb;
+  text-shadow: 0 0 12px #ff1681;
+  text-align: center;
+}
+@keyframes beat {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.12; }
+}
+.floating {
+  position: absolute;
+  bottom: -30px;
+  color: #ff8fc8;
+  animation: rise 6s linear infinite;
+}
+@keyframes rise {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+  <div class="heart">
+    <div class="name">Nazwaa ❤️</div>
+  </div>
+  <h2>For You, Nazwaa 💗</h2>
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const h = document.createElement("div");
+      h.className = "floating";
+      h.textContent = "♥";
+      h.style.left = Math.random() * 100 + "vw";
+      h.style.animationDelay = Math.random() * 6 + "s";
+      h.style.fontSize = (12 + Math.random() * 22) + "px";
+      document.body.appendChild(h);
+    }
+  </script>
+</body>
+</html>
